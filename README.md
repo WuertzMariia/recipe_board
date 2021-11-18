@@ -1,21 +1,23 @@
 # Rezepte Dashboard
 
 > Privates, modulares Dashboard zum Erstellen und verwalten von Rezepten aller Art.
-> 
  
 ### Modular
+
 Das System ist Modular aufgebaut und kann durch selbst geschriebene Module individuell erweitert werden. Dadurch wird eine spätere Weiterentwicklung
 seitens der Community ermöglicht.
 
 ### Self-Hosted
+
 Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server gehostet werden. 
 
 ---
 ## Inhaltsverzeichnis
+
 1. [Features](#Features)
    1. [Must-have](#must-have)
    2. [Nice-to-have](#nice-to-have)
-   3. [Misc](#Misc)
+   3. [Misc](#misc-future)
 2. [Technologie](#Technologie)
 3. [Installation](#Installation)
    1. [Compiles and hot-reloads for development](#compiles-and-hot-reloads-for-development)
@@ -28,7 +30,9 @@ Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server ge
 ---
 
 ## Features
-### Must have 
+
+### Must have
+
 ⬜ Suche/Filtern
 
 ⬜ Rezepte anlegen/bearbeiten/löschen
@@ -39,8 +43,6 @@ Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server ge
 
 ⬜ Rezepte bewerten
 
-⬜ Rezepte Variation, wenn ein User das Rezept verändert
-
 ⬜ Zutatenmenge anhand der Portionen anpassbar
 
                                                        
@@ -48,6 +50,8 @@ Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server ge
 ⬜ Einkaufsliste aus vorher ausgewählten Rezepten
   
 ⬜ Wochenplan (automatisch erstellter Vorschlag)
+
+⬜ Rezepte Variation, wenn ein User das Rezept verändert
   
 ⬜ Sharing auf bekannten Social-Media Plattformen/Apps
   
@@ -55,7 +59,9 @@ Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server ge
 
 ⬜ Nährwerttabellen
 
-### Misc
+### Misc-Future
+
+⬜ Login/ Profile
 
 ⬜ Ernährungsplan anhand Fitnessplan /-ziele erstellen
   
@@ -71,14 +77,21 @@ Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server ge
 
 ✅ Vuetify
 
+⬜ Nuxt
 
-⬜ Symfony
+⬜ Vuex
+
+⬜ Symfony (Future)
 
 ⬜ TailwindCSS
 
-⬜ MariaDB 
+⬜ MariaDB  (Future)
 
-⬜ PHP 8.* 
+⬜ PHP 8.* (Future)
+
+## Externe Libraries
+
+⬜ Date-Fns
 
 ---
 
@@ -87,7 +100,7 @@ Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server ge
 yarn install
 ```
 
-## Compiles and hot-reloads for development
+### Compiles and hot-reloads for development
 ```
 yarn serve
 ```
