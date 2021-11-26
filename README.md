@@ -1,13 +1,15 @@
 # Rezepte Dashboard
 
 > Privates, modulares Dashboard zum Erstellen und verwalten von Rezepten aller Art.
- 
+
+> ⚠️ Dieses Projekt wird im Rahmen des Moduls PBO'21 an der HTW-Dresden erstellt und entwickelt. Am Ende des Moduls wird es kein fertiges Projekt zur Weiterverwendung sein. Einige wichtige Funktionen werden nicht implementiert sein (siehe [**PROJECT-PLAN.md**](https://github.com/OlafdeViesel/recipedash/blob/master/PROJECT-PLAN.md)).
+
 ### Modular
 
 Das System ist Modular aufgebaut und kann durch selbst geschriebene Module individuell erweitert werden. Dadurch wird eine spätere Weiterentwicklung
 seitens der Community ermöglicht.
 
-### Self-Hosted
+### Standalone
 
 Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server gehostet werden. 
 
@@ -16,13 +18,13 @@ Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server ge
 1. [Features](#Features)
    1. [Must-have](#must-have)
    2. [Nice-to-have](#nice-to-have)
-   3. [Misc](#misc-future)
+   3. [Misc](#misc)
 2. [Technologie](#Technologie)
-3. [Pre-Installation](#pre-installation)
+3. [Pre-Installation](#pre-installationsschritte)
 4. [Installation](#Installation)
-   1. [Compiles and hot-reloads for development](#compiles-and-hot-reloads-for-development)
-   2. [Compiles and minifies for production](#compiles-and-minifies-for-production)
-   3. [Lints and fixes files](#lints-and-fixes-files)
+   1. [Kompilieren und Hot Reloads für die Entwicklung](#Kompilieren und Hot-Reloads für die Entwicklung)
+   2. [Kompilieren und minifizieren für Produktionsmodus](#kompilieren-und-minifizieren-für-Produktionsmodus)
+   3. [Linten und Dateien fixen](#linten-und-dateien-fixen)
 4. [Changelog](#Changelog)
 5. [Lizenz](#Lizenz)
 6. [Demo](#Demo)
@@ -58,7 +60,7 @@ Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server ge
 
 ⬜ Nährwerttabellen (nicht im PBO Projektplan enthalten)
 
-### Misc-Future
+### Misc
 
 ⬜ Login/ Profile (nicht im PBO Projektplan enthalten)
 
@@ -74,7 +76,7 @@ Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server ge
 
 ✅ Vuetify
 
-⬜ Nuxt
+⬜ Nuxt (Future)
 
 ⬜ Vuex
 
@@ -86,11 +88,11 @@ Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server ge
 
 ⬜ PHP 8.* (Future)
 
-## Externe Libraries
+## Externe Bibliotheken
 
 ⬜ Date-Fns
 
-## Pre-Installation
+## Pre-Installationsschritte
 Folg. Frameworks, Libraries oder Software muss vorher noch installiert werden:
 
 - NPM 
@@ -107,34 +109,33 @@ Folg. Frameworks, Libraries oder Software muss vorher noch installiert werden:
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Kompilieren und Hot Reloads für die Entwicklung
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### Kompilieren und minifizieren für Produktionsmodus
 ```
 yarn build
 ```
 
-### Lints and fixes files
+### Linten und Dateien fixen
 ```
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
 ## Changelog
-coming soon
+
+[Changelog](https://github.com/OlafdeViesel/recipedash/blob/master/CHANGELOG.md)
 
 ## Lizenz
-coming soon
+
+folgt
 
 ## Demo
 
-coming soon
+folgt
 
 ## Projektplan
 
-[PB `21 Projektplan](https://github.com/OlafdeViesel/recipedash/blob/master/PROJECT-PLAN.md)
+[PBO'21 Projektplan](https://github.com/OlafdeViesel/recipedash/blob/master/PROJECT-PLAN.md)
