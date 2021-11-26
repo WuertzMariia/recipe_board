@@ -18,7 +18,8 @@ Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server ge
    2. [Nice-to-have](#nice-to-have)
    3. [Misc](#misc-future)
 2. [Technologie](#Technologie)
-3. [Installation](#Installation)
+3. [Pre-Installation](#pre-installation)
+4. [Installation](#Installation)
    1. [Compiles and hot-reloads for development](#compiles-and-hot-reloads-for-development)
    2. [Compiles and minifies for production](#compiles-and-minifies-for-production)
    3. [Lints and fixes files](#lints-and-fixes-files)
@@ -47,25 +48,25 @@ Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server ge
 ### Nice-to-have
 ⬜ Einkaufsliste aus vorher ausgewählten Rezepten
   
-⬜ Wochenplan (automatisch erstellter Vorschlag)
+⬜ Wochenplan (automatisch erstellter Vorschlag) (nicht im PBO Projektplan enthalten)
 
-⬜ Rezepte Variation, wenn ein User das Rezept verändert
+⬜ Rezepte Variation, wenn ein User das Rezept verändert (nicht im PBO Projektplan enthalten)
   
-⬜ Sharing auf bekannten Social-Media Plattformen/Apps
+⬜ Sharing auf bekannten Social-Media Plattformen/Apps (nicht im PBO Projektplan enthalten)
   
-⬜ “Rewe ErnährWert”
+⬜ “Rewe ErnährWert” (nicht im PBO Projektplan enthalten)
 
-⬜ Nährwerttabellen
+⬜ Nährwerttabellen (nicht im PBO Projektplan enthalten)
 
 ### Misc-Future
 
-⬜ Login/ Profile
+⬜ Login/ Profile (nicht im PBO Projektplan enthalten)
 
-⬜ Ernährungsplan anhand Fitnessplan /-ziele erstellen
+⬜ Ernährungsplan anhand Fitnessplan /-ziele erstellen (nicht im PBO Projektplan enthalten)
   
-⬜ Empfehlungen für Einkaufsmärkte (z.B. Bio-Märkte, Wochenmarkt, Unverpackt-Laden…)
+⬜ Empfehlungen für Einkaufsmärkte (z.B. Bio-Märkte, Wochenmarkt, Unverpackt-Laden…) (nicht im PBO Projektplan enthalten)
   
-⬜ Empfehlungen anhand von Angeboten
+⬜ Empfehlungen anhand von Angeboten (nicht im PBO Projektplan enthalten)
 
 ## Technologie
 
@@ -88,6 +89,17 @@ Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server ge
 ## Externe Libraries
 
 ⬜ Date-Fns
+
+## Pre-Installation
+Folg. Frameworks, Libraries oder Software muss vorher noch installiert werden:
+
+- NPM 
+  - Windows: [Windows Installer](https://nodejs.org/en/download/)
+  - Linux (Ubuntu): ``sudo apt install npm nodejs``
+
+- YARN 
+  - Windows: [Windows Installer](https://classic.yarnpkg.com/latest.msi)
+  - Linux (Ubuntu): ``sudo npm install --global yarn``
 
 
 ## Installation
