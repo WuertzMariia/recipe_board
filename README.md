@@ -11,7 +11,6 @@ seitens der Community ermöglicht.
 
 Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server gehostet werden. 
 
----
 ## Inhaltsverzeichnis
 
 1. [Features](#Features)
@@ -26,8 +25,7 @@ Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server ge
 4. [Changelog](#Changelog)
 5. [Lizenz](#Lizenz)
 6. [Demo](#Demo)
-
----
+7. [Projektplan](#Projektplan)
 
 ## Features
 
@@ -69,8 +67,6 @@ Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server ge
   
 ⬜ Empfehlungen anhand von Angeboten
 
----
-
 ## Technologie
 
 ✅ Vue 3
@@ -93,7 +89,6 @@ Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server ge
 
 ⬜ Date-Fns
 
----
 
 ## Installation
 ```
@@ -118,18 +113,16 @@ yarn lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
----
-
 ## Changelog
 coming soon
-
----
 
 ## Lizenz
 coming soon
 
----
-
 ## Demo
 
 coming soon
+
+## Projektplan
+
+[PB `21 Projektplan](https://github.com/OlafdeViesel/recipedash/blob/master/PROJECT-PLAN.md)
