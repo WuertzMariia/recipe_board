@@ -22,7 +22,7 @@ Das Rezepte-Board kann bei Bedarf auf dem eigenen Rechner oder eigenem Server ge
 2. [Technologie](#Technologie)
 3. [Pre-Installation](#pre-installationsschritte)
 4. [Installation](#Installation)
-   1. [Kompilieren und Hot Reloads für die Entwicklung](#Kompilieren und Hot Reloads für die Entwicklung)
+   1. [Kompilieren und Hot Reloads für die Entwicklung](#Kompilieren-und-Hot-Reloads-für-die-Entwicklung)
    2. [Kompilieren und minifizieren für Produktionsmodus](#kompilieren-und-minifizieren-für-Produktionsmodus)
    3. [Linten und Dateien fixen](#linten-und-dateien-fixen)
 4. [Changelog](#Changelog)
