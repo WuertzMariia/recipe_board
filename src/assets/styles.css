@@ -1,0 +1,46 @@
+/* Shared styles */
+.app__container {
+    background: #f5f6fa;
+}
+
+.view_container {
+    margin: 3rem 1rem;
+    font: 1rem "PT Sans", sans-serif;
+    background: #f5f6fa;
+}
+
+.margin__large {
+    margin: 3rem 5rem;
+}
+
+.display__flex {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.display__flex__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.input__search__bar {
+    width: 360px;
+    background: #fff;
+    color: #a3a3a3;
+    font: inherit;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+    border: 0;
+    outline: 0;
+    padding: 22px 18px;
+}
+
+.dashboard__image__style > img{
+    margin: auto;
+    height: auto;
+    max-height: 100%;
+    width: auto;
+}

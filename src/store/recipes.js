@@ -1,0 +1,112 @@
+export const recipes = [
+  {
+    name: "Veganer Käsekuchen",
+    imageLink:
+      "https://i.rewe-static.de/rezepte/rewe-de/rezepte-und-gesund-geniessen/rezepte/vegane-rezepte/vegane-kuchen/veganer_kaesekuchen/veganer_kaesekuchen_rdk-rds_rv_hd.png?output-format=jpg&downsize=1067px:*",
+    time: "2 Stunden",
+    levelOfDifficulty: "mittel",
+    nutritionalScore: 2.5,
+    ingredients: [
+      { name: "Mehl", mass: "250 g" },
+      { name: "Backpulver", mass: "2 TL" },
+      { name: "vegane Margarine", mass: "250 g" },
+      { name: "Zucker", mass: "230 g" },
+      { name: "Salz", mass: "1 Prise(n)" },
+      { name: "Wasser", mass: "3 EL" },
+      { name: "Sojajoghurt", mass: "1 kg" },
+      { name: "Vanillepuddingpulver", mass: "2 Paeckchen" },
+    ],
+    steps: [
+      "Für den Boden Mehl, Backpulver, die Hälfte der Margarine, 80 g Zucker, " +
+        "Salz und 3 EL kaltes Wasser zu einem glatten Teig verkneten. In Frischhaltefolie einwickeln und ca. 30 Minuten kühlen.",
+      "Sojajoghurt mit restlichem Zucker, abgeriebener Schale der Zitrone und Puddingpulver verrühren. Restliche Margarine schmelzen und unterrühren.",
+      "Eine Springform (26 cm) fetten und den Teig darin gleichmäßig verteilen. Hierbei einen Rand von 2-3 cm Höhe bilden.",
+      "Die Joghurtmasse in die Form füllen und den Kuchen im vorgeheizten Backofen (180 °C Ober-/Unterhitze) ca. 60 Minuten goldgelb backen. " +
+        "Falls der Kuchen zu dunkel wird mit Alufolie abdecken.",
+    ],
+    nutritionalValues: [
+      { name: "Energie", value: "350kcal", dayQuota: "16%" },
+      { name: "Eiweiß", value: "5.2 g", dayQuota: "9%" },
+      { name: "Fett", value: "17.6 g", dayQuota: "23%" },
+      { name: "Kohlenhydrate", value: "43.2 g", dayQuota: "14%" },
+      { name: "Calcium", value: "20 mg", dayQuota: "2%" },
+      { name: "Magnesium", value: "23 mg", dayQuota: "6%" },
+      { name: "Eisen", value: "0.8 mg", dayQuota: "6%" },
+      { name: "Jod", value: "3.5 μg", dayQuota: "2%" },
+    ],
+  },
+  {
+    name: "Veganes Belugalinsen-Curry",
+    imageLink:
+      "https://c.rewe-static.de/30230132/8/30230132.png?output-format=jpg&downsize=1067px:*",
+    time: "45 Minuten",
+    levelOfDifficulty: "mittel",
+    nutritionalScore: 3,
+    ingredients: [
+      { name: "Zwiebel", mass: "1" },
+      { name: "Knoblauch", mass: "1 Zehe(n)" },
+      { name: "frischer Ingwer", mass: "1 cm" },
+      { name: "Möhre", mass: "1" },
+      { name: "Kokosöl", mass: "3 El" },
+      { name: "Currypaste", mass: "1.5 EL" },
+      { name: "Belugalinsen", mass: "300g" },
+      { name: "stückige Tomaten", mass: "1 Dose(n)" },
+      { name: "Kokosmilch", mass: "1 Dose(n)" },
+      { name: "Gemüsebrühe (glutenfrei)", mass: "550 ml" },
+      { name: "Süßkartoffel", mass: "1" },
+      { name: "Koriander", mass: "0.5 Bund" },
+      { name: "Limettensaft", mass: "2 EL" },
+      { name: "Salz", mass: "" },
+      { name: "Pfeffer", mass: "" },
+    ],
+    steps: [
+      "Zwiebel, Knoblauch und Ingwer schälen und hacken. Möhre schälen und in kleine Würfel schneiden. Öl in einem Topf erhitzen und Zwiebel, Knoblauch, " +
+        "Möhre und Ingwer darin 1-2 Minuten andünsten. Currypaste zugeben, kurz anschwitzen lassen und Linsen zugeben.",
+      "Mit Tomaten, Kokosmilch und ca. 200 ml Brühe ablöschen. Aufkochen und ca. 30 Minuten leicht köcheln lassen. Ab und zu umrühren und nach und nach die restliche Brühe nachgießen.",
+      "Süßkartoffel schälen und in Würfel schneiden. Nach ca. 10 Minuten zum Curry geben und darin garen.",
+      "Koriander waschen und Blätter hacken. Curry mit Limettensaft, Salz und Pfeffer würzen. Curry mit Koriander bestreuen und servieren.",
+    ],
+    nutritionalValues: [
+      { name: "Energie", value: "892kcal", dayQuota: "41%" },
+      { name: "Eiweiß", value: "42.2 g", dayQuota: "77%" },
+      { name: "Fett", value: "25.5 g", dayQuota: "34%" },
+      { name: "Kohlenhydrate", value: "103 g", dayQuota: "34%" },
+      { name: "Calcium", value: "62.8 mg", dayQuota: "63%" },
+      { name: "Magnesium", value: "7.34 mg", dayQuota: "61%" },
+      { name: "Eisen", value: "771 mg", dayQuota: "140%" },
+      { name: "Jod", value: "295 μg", dayQuota: "30%" },
+    ],
+  },
+  {
+    name: "Açaí Antioxidant Bowl",
+    imageLink:
+      "https://i.rewe-static.de/rezepte/rewe-de/rezepte-und-gesund-geniessen/videos/rezepte/acai-puree-pamela-reif/acai-antioxidant-bowl/acai-antioxidant-bowl_rdk-rds_rv_hd.jpg?output-format=jpg&downsize=1067px:*",
+    time: "15 Minuten",
+    levelOfDifficulty: "einfach",
+    nutritionalScore: 5,
+    ingredients: [
+      { name: "Mandelmilch", mass: "20 ml" },
+      { name: "gefrorene Heidelbeeren", mass: "75 g" },
+      { name: "Bio Açaí Püree ", mass: "1 Packung(en)" },
+      { name: "einige getrocknete Brombeeren", mass: "" },
+      { name: "einige getrocknete Cranberries", mass: "" },
+      { name: "Mandeln", mass: "1 Handvoll" },
+      { name: "Agavendicksaft", mass: "etwas" },
+    ],
+    steps: [
+      "Mandelmilch, gefrorene Heidelbeeren und Açaí Püree in einen Standmixer geben und pürieren.",
+      "Die fertige Masse in eine Schüssel geben, nach Belieben mit z. B. frischen Brombeeren oder " +
+        "Himbeeren, Mandeln, Chia-Samen und getrockneten Cranberries garnieren und sofort servieren. Nach Belieben mit etwas Agavendicksaft nachsüßen.",
+    ],
+    nutritionalValues: [
+      { name: "Energie", value: "321", dayQuota: "15%" },
+      { name: "Eiweiß", value: "8.4 g", dayQuota: "15%" },
+      { name: "Fett", value: "15 g", dayQuota: "20%" },
+      { name: "Kohlenhydrate", value: "43.9 g", dayQuota: "15%" },
+      { name: "Calcium", value: "39 mg", dayQuota: "39%" },
+      { name: "Magnesium", value: "10.4 mg", dayQuota: "87%" },
+      { name: "Eisen", value: "49.6 mg", dayQuota: "12%" },
+      { name: "Jod", value: "2.7 μg", dayQuota: "19%" },
+    ],
+  },
+];
