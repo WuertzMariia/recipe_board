@@ -21,9 +21,7 @@ export default {
       currentRecipe: "",
     };
   },
-  mounted() {
-    // this.joke = this.$store.getters.getCurrentJoke;
-  },
   computed: {},
+  mounted() {}, // TODO activate tab navigation
 };
 </script>

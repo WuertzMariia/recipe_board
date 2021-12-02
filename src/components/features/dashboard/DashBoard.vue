@@ -1,8 +1,9 @@
 <template>
   <SearchBar />
-  <v-container>
+  <div class="dashboard__container">
     <div class="display__flex__row">
       <div v-for="item in recipes" :key="item.imageLink" class="mx-3 my-4">
+        <!-- TODO when recipes are complete make sure only 8-12 recipes are loaded -->
         <v-card :loading="loading" max-width="374">
           <template v-slot:progress>
             <v-progress-linear
@@ -55,7 +56,7 @@
         </v-card>
       </div>
     </div>
-  </v-container>
+  </div>
 </template>
 <style>
 @import "./../../../assets/styles.css";
