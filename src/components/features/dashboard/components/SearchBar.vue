@@ -8,6 +8,7 @@
       placeholder="Rezepte suchen"
     />
     <v-btn
+      class="mx-3"
       color="primary"
       icon="mdi-magnify"
       @click="setSearchValue"
