@@ -82,12 +82,26 @@ export default {
   mounted() {},
   computed: {
     recipes() {
-      if (this.$store.state.currentSearchValue.length !== 0) {
-        return this.$store.getters.getCurrentRecipes.filter((item) =>
-          item.name
-            .toLowerCase()
-            .includes(this.$store.state.currentSearchValue.toLowerCase())
-        );
+      /** filters recipes to display on dashboard by search value and category */
+      if (
+        this.$store.state.currentSearchValue.length !== 0 ||
+        this.$store.state.currentCategories.length !== 0
+      ) {
+        const filteredByTypedInSearchValue =
+          this.$store.state.currentSearchValue.length !== 0
+            ? this.$store.getters.getCurrentRecipes.filter((item) =>
+                item.name
+                  .toLowerCase()
+                  .includes(this.$store.state.currentSearchValue.toLowerCase())
+              )
+            : this.$store.getters.getCurrentRecipes;
+        return this.$store.state.currentCategories.length !== 0
+          ? filteredByTypedInSearchValue.filter((item) => {
+              return this.$store.state.currentCategories.every((selectedItem) =>
+                item.categories.includes(selectedItem)
+              );
+            })
+          : filteredByTypedInSearchValue;
       } else {
         return this.$store.getters.getCurrentRecipes;
       }

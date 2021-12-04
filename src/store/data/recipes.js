@@ -4,6 +4,14 @@ export const recipes = [
     imageLink:
       "https://i.rewe-static.de/rezepte/rewe-de/rezepte-und-gesund-geniessen/rezepte/vegane-rezepte/vegane-kuchen/veganer_kaesekuchen/veganer_kaesekuchen_rdk-rds_rv_hd.png?output-format=jpg&downsize=1067px:*",
     time: "2 Stunden",
+    categories: [
+      "Backrezepte",
+      "Vegan",
+      "Vegetarisch",
+      "Kindergerichte",
+      "Weihnachtsrezepte",
+      "Dessert",
+    ],
     levelOfDifficulty: "mittel",
     nutritionalScore: 2.5,
     ingredients: [
@@ -40,6 +48,7 @@ export const recipes = [
     imageLink:
       "https://c.rewe-static.de/30230132/8/30230132.png?output-format=jpg&downsize=1067px:*",
     time: "45 Minuten",
+    categories: ["Vegan", "Vegetarisch", "Diät", "Abendessen", "Hauptspeisen"],
     levelOfDifficulty: "mittel",
     nutritionalScore: 3,
     ingredients: [
@@ -82,6 +91,7 @@ export const recipes = [
     imageLink:
       "https://i.rewe-static.de/rezepte/rewe-de/rezepte-und-gesund-geniessen/videos/rezepte/acai-puree-pamela-reif/acai-antioxidant-bowl/acai-antioxidant-bowl_rdk-rds_rv_hd.jpg?output-format=jpg&downsize=1067px:*",
     time: "15 Minuten",
+    categories: ["Vegan", "Vegetarisch", "Diät", "Low Carb", "Vorspeisen"],
     levelOfDifficulty: "einfach",
     nutritionalScore: 5,
     ingredients: [
@@ -114,6 +124,13 @@ export const recipes = [
     imageLink:
       "https://c.rewe-static.de/30231829/13/30231829.png?output-format=jpg&downsize=1067px:*",
     time: "20 Minuten",
+    categories: [
+      "Vegan",
+      "Vegetarisch",
+      "Abendessen",
+      "Kindergerichte",
+      "Hauptspeisen",
+    ],
     levelOfDifficulty: "einfach",
     nutritionalScore: 5,
     ingredients: [
@@ -146,6 +163,16 @@ export const recipes = [
     imageLink:
       "https://c.rewe-static.de/30231705/11/30231705.png?output-format=jpg&downsize=1067px:*",
     time: "30 Minuten",
+    categories: [
+      "Vegan",
+      "Vegetarisch",
+      "Suppen",
+      "Diät",
+      "Abendessen",
+      "Low Carb",
+      "Kindergerichte",
+      "Hauptspeisen",
+    ],
     levelOfDifficulty: "einfach",
     nutritionalScore: 4,
     ingredients: [
@@ -177,6 +204,53 @@ export const recipes = [
       { name: "Magnesium", value: "148.3 mg", dayQuota: "37%" },
       { name: "Eisen", value: "5.2 mg", dayQuota: "37%" },
       { name: "Jod", value: "2235.8 μg", dayQuota: "112%" },
+    ],
+  },
+  {
+    name: "Veganer Marmorkuchen im Zebralook",
+    imageLink:
+      "https://i.rewe-static.de/rezepte/rewe-de/rezepte-und-gesund-geniessen/rezepte/back-rezepte/marmorkuchen-rezepte/veganer_marmorkuchen_im_zebralook/veganer_marmorkuchen_im_zebralook_rdk-rds_rv_hd.jpg?output-format=jpg&downsize=1067px:*",
+    time: "1:25 Stunde",
+    categories: [
+      "Backrezepte",
+      "Vegan",
+      "Vegetarisch",
+      "Kindergerichte",
+      "Dessert",
+    ],
+    levelOfDifficulty: "einfach",
+    nutritionalScore: 4,
+    ingredients: [
+      { name: "Bio-Zitrone", mass: "1" },
+      { name: "Pflanzenmilch", mass: "600 ml" },
+      { name: "Pflanzenöl", mass: "300 ml" },
+      { name: "Mehl", mass: "500 g" },
+      { name: "Zucker", mass: "125 g" },
+      { name: "Backpulver", mass: "2 TL" },
+      { name: "Vanillezucker", mass: "2 Packungen" },
+      { name: "Backkakao", mass: "25 g" },
+      { name: "Puderzucker zum Bestäuben", mass: "1 Dose(n)" },
+    ],
+    steps: [
+      "Ofen auf 180 Grad vorheizen, Springform fetten und mehlen.",
+      "Zitrone waschen, trocken reiben und die Schale abreiben. Pflanzenmilch, " +
+        "Pflanzenöl und den Abrieb der Zitrone mischen. Mehl, Zucker, Backpulver und Vanillezucker in einer weiteren Schüssel mischen.",
+      "Die feuchten zu den trockenen Zutaten geben und alles miteinander vermixen.",
+      "Den Teig auf zwei Schüsseln gleichmäßig aufteilen, die eine Hälfte mit dem Kakaopulver dunkel einfärben.",
+      "In die Mitte der Springform 3 EL von dem hellen Teig geben, danach 3 EL dunklen Teig in die Mitte des hellen" +
+        " Teigs in der Springform geben. So weitermachen, bis der ganze Teig aufgebraucht ist.",
+      "50 Minuten backen (Stäbchenprobe!), dann aus dem Ofen nehmen, aus der Form lösen und auf einem Kuchengitter auskühlen lassen.",
+      "Nach Belieben mit Puderzucker bestäuben.",
+    ],
+    nutritionalValues: [
+      { name: "Energie", value: "311 kcal", dayQuota: "16%" },
+      { name: "Eiweiß", value: "4 g", dayQuota: "7%" },
+      { name: "Fett", value: "19 g", dayQuota: "25%" },
+      { name: "Kohlenhydrate", value: "32 g", dayQuota: "11%" },
+      { name: "Calcium", value: "4 mg", dayQuota: "4%" },
+      { name: "Magnesium", value: "17 mg", dayQuota: "5%" },
+      { name: "Eisen", value: "10 mg", dayQuota: "1%" },
+      { name: "Jod", value: "30 μg", dayQuota: "5%" },
     ],
   },
 ];
