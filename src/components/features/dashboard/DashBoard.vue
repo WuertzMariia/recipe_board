@@ -49,9 +49,7 @@
           </v-card-text>
 
           <v-card-actions>
-            <v-btn color="deep-purple lighten-2" text @click="reserve">
-              Ansehen
-            </v-btn>
+            <v-btn color="deep-purple lighten-2" text>Ansehen </v-btn>
           </v-card-actions>
         </v-card>
       </div>
@@ -73,38 +71,52 @@ export default {
     };
   },
   methods: {
-    reserve() {
-      this.loading = true;
-
-      setTimeout(() => (this.loading = false), 2000);
+    loadItems() {
+      window.onscroll = () => {
+        let bottomOfWindow =
+          window.innerHeight + window.scrollY >= document.body.scrollHeight;
+        if (bottomOfWindow) {
+          return this.$store.commit("incrementLoadedItems", 8);
+        }
+      };
     },
   },
-  mounted() {},
+  mounted() {
+    /** load more data */
+    this.$nextTick(function () {
+      window.addEventListener("scroll", this.loadItems);
+      this.loadItems(); // needed for initial loading on page
+    });
+  },
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.loadItems);
+  },
   computed: {
     recipes() {
       /** filters recipes to display on dashboard by search value and category */
+      let storage = this.$store.getters.getCurrentRecipes;
       if (
         this.$store.state.currentSearchValue.length !== 0 ||
         this.$store.state.currentCategories.length !== 0
       ) {
-        const filteredByTypedInSearchValue =
-          this.$store.state.currentSearchValue.length !== 0
-            ? this.$store.getters.getCurrentRecipes.filter((item) =>
-                item.name
-                  .toLowerCase()
-                  .includes(this.$store.state.currentSearchValue.toLowerCase())
-              )
-            : this.$store.getters.getCurrentRecipes;
-        return this.$store.state.currentCategories.length !== 0
-          ? filteredByTypedInSearchValue.filter((item) => {
-              return this.$store.state.currentCategories.every((selectedItem) =>
-                item.categories.includes(selectedItem)
-              );
-            })
-          : filteredByTypedInSearchValue;
-      } else {
-        return this.$store.getters.getCurrentRecipes;
+        if (this.$store.state.currentSearchValue.length !== 0) {
+          storage = storage.filter((item) =>
+            item.name
+              .toLowerCase()
+              .includes(this.$store.state.currentSearchValue.toLowerCase())
+          );
+        }
+        if (this.$store.state.currentCategories.length !== 0) {
+          storage = storage.filter((item) => {
+            return this.$store.state.currentCategories.every((selectedItem) =>
+              item.categories.includes(selectedItem)
+            );
+          });
+        }
       }
+      return Object.fromEntries(
+        Object.entries(storage).slice(1, this.$store.state.loadedItems)
+      );
     },
   },
 };
