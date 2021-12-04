@@ -115,7 +115,7 @@ export default {
         }
       }
       return Object.fromEntries(
-        Object.entries(storage).slice(1, this.$store.state.loadedItems)
+        Object.entries(storage).slice(0, this.$store.state.loadedItems)
       );
     },
   },
