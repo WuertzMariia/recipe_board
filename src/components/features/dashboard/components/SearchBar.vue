@@ -1,21 +1,14 @@
 <template>
-  <div>
-    <div class="margin__large display__flex">
+  <div class="display__flex__column">
+    <div class="margin__large input__search__bar">
       <v-text-field
-        class="input__search__bar"
         type="text"
         id="search"
         v-model="currentSearchValue"
         append-icon="mdi-magnify"
+        prepend-inner-icon="mdi-magnify"
         v-on:input="setSearchValue, setCategories"
         label="Rezepte suchen"
-      />
-      <v-btn
-        class="mx-3"
-        color="primary"
-        icon="mdi-magnify"
-        @click="setSearchValue, setCategories"
-        size="small"
       />
     </div>
     <div class="display__flex">

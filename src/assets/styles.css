@@ -20,6 +20,14 @@
     align-items: center;
 }
 
+.display__flex__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
 .display__flex__row {
     display: flex;
     flex-direction: row;
@@ -31,14 +39,7 @@
     max-width: 50vw;
 }
 .input__search__bar {
-    width: 360px;
-    background: #fff;
-    color: #a3a3a3;
-    font: inherit;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
-    border: 0;
-    outline: 0;
-    padding: 22px 18px;
+    min-width: 360px;
 }
 
 .dashboard__container {
