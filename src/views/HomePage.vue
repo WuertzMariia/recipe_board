@@ -10,7 +10,7 @@
 import Dashboard from "@/components/features/dashboard/DashBoard";
 
 export default {
-  name: "HomeView",
+  name: "HomePage",
   components: {
     Dashboard,
   },
