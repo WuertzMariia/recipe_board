@@ -61,6 +61,7 @@
 </style>
 <script>
 import SearchBar from "@/components/features/dashboard/components/SearchBar";
+import { recipes } from "@/store/data/recipes";
 
 export default {
   components: { SearchBar },
@@ -76,8 +77,8 @@ export default {
       window.onscroll = () => {
         let bottomOfWindow =
           window.innerHeight + window.scrollY >= document.body.scrollHeight;
-        if (bottomOfWindow) {
-          return this.$store.commit("incrementLoadedItems", 8);
+        if (bottomOfWindow && this.$store.state.loadedItems <= recipes.length) {
+          return this.$store.commit("incrementLoadedItems", 4);
         }
       };
     },

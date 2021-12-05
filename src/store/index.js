@@ -7,7 +7,7 @@ export default createStore({
     currentSearchValue: "",
     currentCategories: [],
     recipes: recipes,
-    loadedItems: 9,
+    loadedItems: 4,
   },
   mutations: {
     loadSearchValue(state, payload) {
