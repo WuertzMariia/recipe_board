@@ -49,7 +49,7 @@
           </v-card-text>
 
           <v-card-actions>
-            <v-btn color="deep-purple lighten-2" text>Ansehen </v-btn>
+            <v-btn color="deep-purple lighten-2" text>Ansehen</v-btn>
           </v-card-actions>
         </v-card>
       </div>
@@ -61,6 +61,7 @@
 </style>
 <script>
 import SearchBar from "@/components/features/dashboard/components/SearchBar";
+
 export default {
   components: { SearchBar },
   data() {
@@ -95,24 +96,19 @@ export default {
     recipes() {
       /** filters recipes to display on dashboard by search value and category */
       let storage = this.$store.getters.getCurrentRecipes;
-      if (
-        this.$store.state.currentSearchValue.length !== 0 ||
-        this.$store.state.currentCategories.length !== 0
-      ) {
-        if (this.$store.state.currentSearchValue.length !== 0) {
-          storage = storage.filter((item) =>
-            item.name
-              .toLowerCase()
-              .includes(this.$store.state.currentSearchValue.toLowerCase())
+      if (this.$store.state.currentSearchValue.length !== 0) {
+        storage = storage.filter((item) =>
+          item.name
+            .toLowerCase()
+            .includes(this.$store.state.currentSearchValue.toLowerCase())
+        );
+      }
+      if (this.$store.state.currentCategories.length !== 0) {
+        storage = storage.filter((item) => {
+          return this.$store.state.currentCategories.every((selectedItem) =>
+            item.categories.includes(selectedItem)
           );
-        }
-        if (this.$store.state.currentCategories.length !== 0) {
-          storage = storage.filter((item) => {
-            return this.$store.state.currentCategories.every((selectedItem) =>
-              item.categories.includes(selectedItem)
-            );
-          });
-        }
+        });
       }
       return Object.fromEntries(
         Object.entries(storage).slice(0, this.$store.state.loadedItems)
