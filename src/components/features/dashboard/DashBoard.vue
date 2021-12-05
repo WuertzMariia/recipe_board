@@ -3,7 +3,6 @@
   <div class="dashboard__container">
     <div class="display__flex__row">
       <div v-for="item in recipes" :key="item.imageLink" class="mx-3 my-4">
-        <!-- TODO when recipes are complete make sure only 8-12 recipes are loaded -->
         <v-card :loading="loading" max-width="374">
           <template v-slot:progress>
             <v-progress-linear
@@ -18,7 +17,9 @@
             class="dashboard__image__style"
           ></v-img>
 
-          <v-card-title>{{ item.name }}</v-card-title>
+          <v-card-title class="dashboard__card__title">{{
+            item.name
+          }}</v-card-title>
 
           <v-card-text>
             <div class="my-1 text-subtitle-1">Zubereitung: {{ item.time }}</div>
