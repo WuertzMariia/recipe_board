@@ -27,6 +27,19 @@
           ></v-img
         ></v-col>
       </v-row>
+      <v-row
+        class="
+          ml-5
+          display__flex
+          flex-column
+          justify-sm-start
+          align-start align-content-sm-start
+        "
+      >
+        <div v-for="ingredient in recipe.ingredients" :key="ingredient.name">
+          {{ ingredient.mass }} {{ ingredient.unity }} {{ ingredient.name }}
+        </div>
+      </v-row>
     </v-container>
   </div>
 </template>
@@ -53,7 +66,6 @@ export default {
         replaceMutatedVowel(item.name).toLowerCase().split("-").join(" ") ===
         splitRecipeName
     );
-    console.log(this.recipe);
   },
   mounted() {},
 };
