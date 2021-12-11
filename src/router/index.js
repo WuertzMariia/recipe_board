@@ -10,20 +10,17 @@ const routes = [
   {
     path: "/rezept/anlegen",
     name: "rezept",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/CreateRecipe.vue"),
+    component: () => import("../views/CreateRecipe.vue"),
   },
   {
     path: "/einkaufswagen",
     name: "einkaufswagen",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/ShoppingCart.vue"),
+    component: () => import("../views/ShoppingCart.vue"),
+  },
+  {
+    path: "/rezepte/:name",
+    name: "rezepte",
+    component: () => import("../components/features/recipe-page/RecipePage"),
   },
 ];
 

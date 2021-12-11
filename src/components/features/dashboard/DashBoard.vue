@@ -50,7 +50,12 @@
           </v-card-text>
 
           <v-card-actions>
-            <v-btn color="deep-purple lighten-2" text>Ansehen</v-btn>
+            <v-btn
+              color="deep-purple lighten-2"
+              text
+              v-on:click="openRecipePage(item)"
+              >Ansehen</v-btn
+            >
           </v-card-actions>
         </v-card>
       </div>
@@ -63,12 +68,12 @@
 <script>
 import SearchBar from "@/components/features/dashboard/components/SearchBar";
 import { recipes } from "@/store/data/recipes";
+import { replaceMutatedVowel } from "@/shared/replaceMutatedVowel";
 
 export default {
   components: { SearchBar },
   data() {
     return {
-      currentRecipe: "",
       loading: false,
       selection: 1,
     };
@@ -82,6 +87,14 @@ export default {
           return this.$store.commit("incrementLoadedItems", 4);
         }
       };
+    },
+    openRecipePage(item) {
+      const itemNameWithoutMutatedVowel = replaceMutatedVowel(item.name);
+      const routeParams =
+        "/rezepte/" +
+        itemNameWithoutMutatedVowel.toLowerCase().split(" ").join("-");
+      this.$router.push(`${routeParams}`);
+      console.log(this.$router.currentRoute.value.fullPath);
     },
   },
   mounted() {
