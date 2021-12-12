@@ -57,7 +57,7 @@ export const recipes = [
       { name: "Möhre", mass: "1", unity: "" },
       { name: "Kokosöl", mass: "3", unity: "EL" },
       { name: "Currypaste", mass: "1.5", unity: "EL" },
-      { name: "Belugalinsen", mass: "300g", unity: "g" },
+      { name: "Belugalinsen", mass: "300", unity: "g" },
       { name: "stückige Tomaten", mass: "1", unity: "Dose(n)" },
       { name: "Kokosmilch", mass: "1", unity: "Dose(n)" },
       { name: "Gemüsebrühe (glutenfrei)", mass: "550", unity: "ml" },

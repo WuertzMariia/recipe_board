@@ -1,6 +1,13 @@
 <template>
-  <div class="display__flex__column">
-    <div class="margin__large input__search__bar">
+  <div
+    class="
+      d-flex
+      flex-column
+      justify-sm-center
+      align-content-center align-center
+    "
+  >
+    <div class="mt-3 input-search__bar">
       <v-text-field
         type="text"
         id="search"
@@ -11,13 +18,14 @@
         label="Rezepte suchen"
       />
     </div>
-    <div class="display__flex">
+    <div>
       <form
         @submit.prevent="submit"
-        class="display__flex__row display__flex__gap"
+        class="d-flex flex-row flex-wrap justify-sm-center display-flex__gap"
       >
         <div v-for="(category, index) in categories" :key="category">
           <v-checkbox
+            hide-details
             type="checkbox"
             color="indigo darken-3"
             @change="setSearchValue, setCategories"

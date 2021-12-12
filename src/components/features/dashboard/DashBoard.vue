@@ -1,7 +1,7 @@
 <template>
   <SearchBar />
   <div>
-    <div class="display__flex__row">
+    <div class="d-flex flex-row flex-wrap justify-sm-center">
       <div v-for="item in recipes" :key="item.imageLink" class="mx-3 my-4">
         <v-card :loading="loading" max-width="374">
           <template v-slot:progress>
@@ -14,10 +14,10 @@
           <v-img
             height="250"
             :src="item.imageLink"
-            class="dashboard__image__style"
+            class="dashboard-image__style"
           ></v-img>
 
-          <v-card-title class="dashboard__card__title">{{
+          <v-card-title class="dashboard-card__title">{{
             item.name
           }}</v-card-title>
 
