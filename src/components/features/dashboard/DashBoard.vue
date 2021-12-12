@@ -44,6 +44,7 @@
                 <v-rating
                   v-model="item.nutritionalScore"
                   readonly="true"
+                  color="#348d9a"
                 ></v-rating>
               </div>
             </v-container>
@@ -51,7 +52,8 @@
 
           <v-card-actions>
             <v-btn
-              color="deep-purple lighten-2"
+              color="#348d9a"
+              style="color: white"
               text
               v-on:click="openRecipePage(item)"
               >Ansehen</v-btn

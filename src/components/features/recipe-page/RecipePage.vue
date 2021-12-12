@@ -39,40 +39,61 @@
           align-start align-content-sm-start
         "
       >
-        <div
-          class="
-            pa-4
-            mb-5
-            d-flex
-            align-content-bottom align-bottom
-            recipe-border
-          "
-        >
-          <v-btn class="ml-1 mr-4" @click="decrementPortionNumber">-</v-btn
-          ><span
-            >{{ this.portionNumber }}
-            {{ this.portionNumber === 1 ? "Portion" : "Portionen" }}</span
-          ><v-btn class="mr-1 ml-4" @click="incrementPortionNumber">+</v-btn>
-        </div>
-        <form>
-          <div v-for="ingredient in recipe.ingredients" :key="ingredient.name">
-            <v-checkbox
-              hide-details
-              color="indigo"
-              :value="ingredient.name"
-              :id="'ingredient' + index"
-              :label="`${
-                ingredient.mass * this.portionNumber === 0
-                  ? ''
-                  : ingredient.mass * this.portionNumber
-              } ${ingredient.unity}  ${ingredient.name}`"
-              v-model="selection.ingredients"
-            />
+      </v-row>
+      <v-row style="display: flex; flex-direction: row">
+        <v-col cols="12" sm="12" md="5">
+          <div
+            class="
+              pa-4
+              mb-5
+              d-flex
+              align-content-bottom align-bottom
+              recipe-border
+            "
+          >
+            <v-btn class="ml-1 mr-4" @click="decrementPortionNumber">-</v-btn
+            ><span
+              >{{ this.portionNumber }}
+              {{ this.portionNumber === 1 ? "Portion" : "Portionen" }}</span
+            ><v-btn class="mr-1 ml-4" @click="incrementPortionNumber">+</v-btn>
           </div>
-        </form>
-        <v-btn type="submit" @click="submit" class="mt-3 mb-5"
-          >Zum Einkaufswagen hinzufügen</v-btn
-        >
+          <form>
+            <div
+              v-for="ingredient in recipe.ingredients"
+              :key="ingredient.name"
+            >
+              <v-checkbox
+                hide-details
+                color="#348d9a"
+                :value="ingredient.name"
+                :id="'ingredient' + index"
+                :label="`${
+                  ingredient.mass * this.portionNumber === 0
+                    ? ''
+                    : ingredient.mass * this.portionNumber
+                } ${ingredient.unity}  ${ingredient.name}`"
+                v-model="selection.ingredients"
+              />
+            </div>
+          </form>
+          <v-btn type="submit" @click="submit" class="mt-3 mb-5"
+            >Zum Einkaufswagen hinzufügen</v-btn
+          >
+        </v-col>
+        <v-col cols="12" sm="12" md="7">
+          <div>
+            <v-app-bar-title class="mb-4">Zubereitung</v-app-bar-title>
+            <div v-for="(step, index) in recipe.steps" :key="index">
+              <v-chip
+                color="secondary"
+                style="background-color: #348d9a; color: white"
+                class="mb-2 mt-7"
+                >Schritt {{ index + 1 }}</v-chip
+              >
+              <div style="word-break: break-all">{{ step }}</div>
+            </div>
+          </div>
+        </v-col>
       </v-row>
     </v-container>
   </div>

@@ -27,7 +27,7 @@
           <v-checkbox
             hide-details
             type="checkbox"
-            color="indigo darken-3"
+            color="#348d9a"
             @change="setSearchValue, setCategories"
             :value="category"
             :id="'cb-category-' + index"
