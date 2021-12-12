@@ -1,0 +1,16 @@
+export const categories = [
+  "Backrezepte",
+  "Vegan",
+  "Vegetarisch",
+  "Nudel&Pasta",
+  "Suppen",
+  "Auflauf",
+  "Diät",
+  "Abendessen",
+  "Low Carb",
+  "Kindergerichte",
+  "Weihnachtsrezepte",
+  "Vorspeisen",
+  "Hauptspeisen",
+  "Dessert",
+];

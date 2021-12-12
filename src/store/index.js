@@ -1,8 +1,32 @@
 import { createStore } from "vuex";
+import { recipes } from "@/store/data/recipes";
 
 export default createStore({
-  state: {},
-  mutations: {},
+  state: {
+    currentRecipe: {},
+    currentSearchValue: "",
+    currentCategories: [],
+    recipes: recipes,
+    loadedItems: 4,
+  },
+  mutations: {
+    loadSearchValue(state, payload) {
+      state.currentSearchValue = payload;
+    },
+    setCurrentCategories(state, payload) {
+      state.currentCategories = payload;
+    },
+    incrementLoadedItems(state, payload) {
+      state.loadedItems += payload;
+    },
+  },
   actions: {},
-  modules: {},
+  modules: {
+    setCurrentCount(state, payload) {
+      state.currentRecipe = payload;
+    },
+  },
+  getters: {
+    getCurrentRecipes: (state) => state.recipes,
+  },
 });
