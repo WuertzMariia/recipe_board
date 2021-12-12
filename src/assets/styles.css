@@ -44,9 +44,6 @@
     min-width: 360px;
 }
 
-.dashboard__container {
-    margin: 0 10rem;
-}
 .dashboard__image__style > img{
     margin: auto;
     height: auto;

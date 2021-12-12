@@ -1,6 +1,6 @@
 <template>
   <SearchBar />
-  <div class="dashboard__container">
+  <div>
     <div class="display__flex__row">
       <div v-for="item in recipes" :key="item.imageLink" class="mx-3 my-4">
         <v-card :loading="loading" max-width="374">
