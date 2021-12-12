@@ -70,3 +70,12 @@
 .styled-table tbody tr:last-of-type {
     border-bottom: 2px solid #348d9a;
 }
+
+.routing-link {
+    text-decoration: none;
+    color: #348d9a;
+}
+
+.icon-color {
+    background-color: #348d9a;
+}
