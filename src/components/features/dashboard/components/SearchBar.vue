@@ -18,6 +18,7 @@
       >
         <div v-for="(category, index) in categories" :key="category">
           <v-checkbox
+            hide-details
             type="checkbox"
             color="indigo darken-3"
             @change="setSearchValue, setCategories"

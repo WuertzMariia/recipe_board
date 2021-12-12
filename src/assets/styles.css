@@ -57,3 +57,8 @@
 .dashboard__card__title {
     min-height: 5.0rem;
 }
+
+.recipe-border {
+    border: 2px solid rgb(204, 204, 204);
+    border-radius: 10px;
+}

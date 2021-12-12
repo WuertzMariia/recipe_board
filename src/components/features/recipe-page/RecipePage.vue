@@ -30,14 +30,35 @@
       <v-row
         class="
           ml-5
+          mt-5
           display__flex
           flex-column
           justify-sm-start
           align-start align-content-sm-start
         "
       >
+        <div
+          class="
+            pa-4
+            mb-5
+            display__flex
+            align-content-bottom align-bottom
+            recipe-border
+          "
+        >
+          <v-btn class="ml-1 mr-4" @click="decrementPortionNumber">-</v-btn
+          ><span
+            >{{ this.portionNumber }}
+            {{ this.portionNumber === 1 ? "Portion" : "Portionen" }}</span
+          ><v-btn class="mr-1 ml-4" @click="incrementPortionNumber">+</v-btn>
+        </div>
         <div v-for="ingredient in recipe.ingredients" :key="ingredient.name">
-          {{ ingredient.mass }} {{ ingredient.unity }} {{ ingredient.name }}
+          <v-checkbox
+            hide-details
+            color="indigo"
+            :label="`${ingredient.mass * this.portionNumber} ${ingredient.unity}
+          ${ingredient.name}`"
+          ></v-checkbox>
         </div>
       </v-row>
     </v-container>
@@ -53,6 +74,7 @@ export default {
   data() {
     return {
       recipe: null,
+      portionNumber: 1,
     };
   },
   beforeMount() {
@@ -66,6 +88,14 @@ export default {
         replaceMutatedVowel(item.name).toLowerCase().split("-").join(" ") ===
         splitRecipeName
     );
+  },
+  methods: {
+    incrementPortionNumber() {
+      this.portionNumber += 1;
+    },
+    decrementPortionNumber() {
+      this.portionNumber = this.portionNumber <= 1 ? 1 : this.portionNumber - 1;
+    },
   },
   mounted() {},
 };
