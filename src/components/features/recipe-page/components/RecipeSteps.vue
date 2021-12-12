@@ -2,7 +2,7 @@
   <v-col cols="12" sm="12" md="7">
     <div>
       <v-app-bar-title class="mb-4">Zubereitung</v-app-bar-title>
-      <div v-for="(step, index) in recipe.steps" :key="index">
+      <div class="ml-4" v-for="(step, index) in recipe.steps" :key="index">
         <v-chip
           color="secondary"
           style="background-color: #348d9a; color: white"
