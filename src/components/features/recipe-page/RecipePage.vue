@@ -3,7 +3,7 @@
     <v-container>
       <v-row
         class="
-          display__flex
+          d-flex
           flex-wrap-reverse
           align-start align-sm-center
           justify-sm-center
@@ -11,19 +11,21 @@
       >
         <v-col
           sm="12"
-          md="6"
-          class="display__flex flex-column align-start justify-md-start"
-          ><v-app-bar-title>{{ recipe.name }}</v-app-bar-title>
+          md="7"
+          class="d-flex flex-column align-start justify-md-start"
+          ><v-app-bar-title class="recipe-subheader">{{
+            recipe.name
+          }}</v-app-bar-title>
           <div class="ml-5 mt-3">Zubereitung: {{ recipe.time }}</div>
           <div class="ml-5 mt-3">
             Schwierigkeitsgrad: {{ recipe.levelOfDifficulty }}
           </div>
         </v-col>
-        <v-col sm="12" md="6">
+        <v-col sm="12" md="5">
           <v-img
             height="350"
             :src="recipe.imageLink"
-            class="dashboard__image__style"
+            class="dashboard-image__style"
           ></v-img
         ></v-col>
       </v-row>
@@ -31,7 +33,7 @@
         class="
           ml-5
           mt-5
-          display__flex
+          d-flex
           flex-column
           justify-sm-start
           align-start align-content-sm-start
@@ -41,7 +43,7 @@
           class="
             pa-4
             mb-5
-            display__flex
+            d-flex
             align-content-bottom align-bottom
             recipe-border
           "

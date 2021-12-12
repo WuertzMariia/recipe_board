@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app class="view_container">
+    <v-app class="view-container">
       <Dashboard />
     </v-app>
   </div>
