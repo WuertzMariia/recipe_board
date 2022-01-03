@@ -1,5 +1,18 @@
 <template>
   <div>
-    <h1>Rezept anlegen</h1>
+    <v-app class="view-container">
+      <NewRecipe />
+    </v-app>
   </div>
 </template>
+
+<script>
+import NewRecipe from "@/components/features/new-recipe/NewRecipe";
+
+export default {
+  name: "CreateRecipe",
+  components: {
+    NewRecipe,
+  },
+};
+</script>
