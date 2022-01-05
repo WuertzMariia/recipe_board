@@ -1,5 +1,16 @@
 <template>
   <div>
-    <h1>Rezept anlegen</h1>
+    <recipe-creation></recipe-creation>
   </div>
 </template>
+
+<script>
+import RecipeCreation from "@/components/features/ReceipeEditorial/components/RecipeCreation";
+
+export default {
+  name: "HomePage",
+  components: {
+    RecipeCreation,
+  },
+};
+</script>
