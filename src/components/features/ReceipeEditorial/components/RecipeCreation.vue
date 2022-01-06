@@ -103,7 +103,7 @@
             v-bind:addedData="nutritionalValues"
             v-bind:type="'nutritionalValues'"
           ></added-data>
-          <div class="d-flex justify-center align-content-center">
+          <div class="d-flex flex-column justify-center align-content-center">
             <v-btn
               text
               size="x-large"
@@ -113,6 +113,7 @@
             >
               Rezept speichern
             </v-btn>
+            <alert-popup v-bind:type="'success'" v-if="showPopUp"></alert-popup>
           </div>
         </v-col>
       </v-row>
@@ -125,12 +126,15 @@
 <script>
 import { categories } from "@/store/data/categories";
 import AddedData from "@/components/features/ReceipeEditorial/components/AddedData";
+import AlertPopup from "@/shared/components/AlertPopup";
 
 export default {
   components: {
     AddedData,
+    AlertPopup,
   },
   data: () => ({
+    showPopUp: false,
     categories,
     selectionCategory: {
       category: [],
@@ -205,8 +209,11 @@ export default {
         steps: this.steps,
         nutritionalValues: this.nutritionalValues,
       };
-      console.log(newRecipe);
-      return this.$store.commit("addNewRecipe", newRecipe);
+      this.$store.commit("addNewRecipe", newRecipe);
+      this.showPopUp = true;
+      window.setTimeout(() => {
+        this.showPopUp = false;
+      }, 2000);
     },
   },
   beforeMount() {},

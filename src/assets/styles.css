@@ -86,3 +86,9 @@
 .flex-gap {
     gap: 1rem;
 }
+
+.alert-success {
+    background-color: forestgreen !important;
+    color: white !important;
+    font-size: 18px;
+}
