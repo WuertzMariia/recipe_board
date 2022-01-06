@@ -84,9 +84,13 @@ export default {
     loadItems() {
       window.onscroll = () => {
         let bottomOfWindow =
-          window.innerHeight + window.scrollY >= document.body.scrollHeight;
-        if (bottomOfWindow && this.$store.state.loadedItems <= recipes.length) {
-          return this.$store.commit("incrementLoadedItems", 4);
+          window.innerHeight + window.pageYOffset >=
+          document.body.scrollHeight - 1;
+        if (
+          !!bottomOfWindow &&
+          this.$store.state.loadedItems <= recipes.length
+        ) {
+          this.$store.commit("incrementLoadedItems", 4);
         }
       };
     },
