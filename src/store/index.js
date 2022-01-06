@@ -19,6 +19,9 @@ export default createStore({
     incrementLoadedItems(state, payload) {
       state.loadedItems += payload;
     },
+    addNewRecipe(state, payload) {
+      state.recipes = [...state.recipes, payload];
+    },
   },
   actions: {},
   modules: {

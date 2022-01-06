@@ -22,7 +22,9 @@
               v-if="type === 'ingredients' || type === 'nutritionalValues'"
               >{{ value?.name }}</span
             >
-            <span v-if="type === 'steps'">{{ value }}</span>
+            <span v-if="type === 'steps'" class="recipe-subheader">{{
+              value
+            }}</span>
           </td>
           <td>
             <span v-if="type === 'ingredients'">{{ value?.mass }}</span>
