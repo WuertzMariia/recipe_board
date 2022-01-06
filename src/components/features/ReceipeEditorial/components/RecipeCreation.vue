@@ -58,13 +58,22 @@
               Hinzufügen
             </v-btn>
           </div>
-          <div v-if="ingredients.length !== 0">{{ ingredients }}</div>
+          <div v-if="ingredients.length !== 0">
+            <added-data
+              v-bind:addedData="ingredients"
+              v-bind:type="'ingredients'"
+            ></added-data>
+          </div>
           <h4 class="ml-3 mb-5 mt-5 d-flex justify-start">
             Zwischenschritt hinzufügen
           </h4>
           <v-textarea v-model="step"></v-textarea>
           <v-btn text color="#348d9a" @click="addNewStep"> Hinzufügen </v-btn>
-          <div v-if="steps.length !== 0">{{ steps }}</div>
+          <added-data
+            v-if="steps.length !== 0"
+            v-bind:addedData="steps"
+            v-bind:type="'steps'"
+          ></added-data>
           <h4 class="ml-3 mb-5 mt-5 d-flex justify-start">
             Ernäherungswerte hinzufügen
           </h4>
@@ -89,9 +98,11 @@
               Hinzufügen
             </v-btn>
           </div>
-          <div v-if="nutritionalValues.length !== 0">
-            {{ nutritionalValues }}
-          </div>
+          <added-data
+            v-if="nutritionalValues.length !== 0"
+            v-bind:addedData="nutritionalValues"
+            v-bind:type="'nutritionalValues'"
+          ></added-data>
         </v-col>
       </v-row>
     </v-container>
@@ -102,8 +113,12 @@
 </style>
 <script>
 import { categories } from "@/store/data/categories";
+import AddedData from "@/components/features/ReceipeEditorial/components/AddedData";
 
 export default {
+  components: {
+    AddedData,
+  },
   data: () => ({
     categories,
     selectionCategory: {
@@ -124,18 +139,22 @@ export default {
     dayQuota: "",
     nameNutriScore: "",
     nutritionalValues: [],
+    test: [],
   }),
   methods: {
     addNewIngredientItem() {
       const ingName = this.ingredientName;
       const mass = this.mass;
       const unity = this.unity;
-      this.ingredients.push({ name: ingName, mass, unity });
+      this.ingredients.push({
+        name: ingName,
+        mass,
+        unity,
+      });
     },
     addNewStep() {
       const step = this.step;
       this.steps.push(step);
-      this.step = "";
     },
     addNewNutriScoreItem() {
       const dayQuota = this.dayQuota;
