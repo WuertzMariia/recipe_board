@@ -1,31 +1,18 @@
 <template>
   <v-form v-model="valid">
     <v-container>
-      <h2 class="ml-3 mb-5 mt-5">Rezept anlegen</h2>
-      <v-row>
-        <v-col cols="12" md="12">
+      <h2 class="ml-3 mb-5 mt-5 d-flex justify-center">Rezept anlegen</h2>
+      <v-row class="d-flex flex-column justify-center align-center">
+        <v-col cols="12" md="8">
+          <v-text-field v-model="name" :counter="3" label="Name"></v-text-field>
           <v-text-field
-            v-model="firstname"
-            :rules="nameRules"
-            :counter="10"
-            label="Name"
-            required
-          ></v-text-field>
-          <v-text-field
-            v-model="lastname"
-            :rules="nameRules"
+            v-model="link"
             :counter="10"
             label="Link zum Bild"
-            required
           ></v-text-field>
-          <v-text-field
-            v-model="email"
-            :rules="emailRules"
-            label="Zeit"
-            required
-          ></v-text-field>
+          <v-text-field v-model="time" label="Zeit"></v-text-field>
+          <div>Ordnen Sie das Rezept den folgenden Kategorien zu:</div>
           <div class="d-flex flex-row flex-wrap justify-space-start">
-            <span>Ordnen Sie das Rezept den folgenden Kategorien zu:</span>
             <div v-for="(category, index) in categories" :key="category">
               <v-checkbox
                 hide-details
@@ -37,6 +24,73 @@
                 v-model="selectionCategory.category"
               />
             </div>
+          </div>
+          <v-text-field
+            v-model="levelOfDifficulty"
+            label="Schwierigkeitsgrad"
+          ></v-text-field>
+          <v-text-field
+            v-model="nutritionalScore"
+            label="Nutri-Score"
+            required
+          ></v-text-field>
+          <h4 class="ml-3 mb-5 mt-5 d-flex justify-start">
+            Zutaten hinzufügen
+          </h4>
+          <div class="d-flex justify-space-between flex-gap">
+            <v-text-field
+              v-model="ingredientName"
+              label="Name"
+              required
+            ></v-text-field>
+            <v-text-field v-model="mass" label="Masse" required></v-text-field>
+            <v-text-field
+              v-model="unity"
+              label="Einheiten"
+              required
+            ></v-text-field>
+            <v-btn
+              text
+              color="#348d9a"
+              class="mt-3"
+              @click="addNewIngredientItem"
+            >
+              Hinzufügen
+            </v-btn>
+          </div>
+          <div v-if="ingredients.length !== 0">{{ ingredients }}</div>
+          <h4 class="ml-3 mb-5 mt-5 d-flex justify-start">
+            Zwischenschritt hinzufügen
+          </h4>
+          <v-textarea v-model="step"></v-textarea>
+          <v-btn text color="#348d9a" @click="addNewStep"> Hinzufügen </v-btn>
+          <div v-if="steps.length !== 0">{{ steps }}</div>
+          <h4 class="ml-3 mb-5 mt-5 d-flex justify-start">
+            Ernäherungswerte hinzufügen
+          </h4>
+          <div class="d-flex justify-space-between flex-gap">
+            <v-text-field
+              v-model="nameNutriScore"
+              label="Name"
+              required
+            ></v-text-field>
+            <v-text-field v-model="value" label="Einheit"></v-text-field>
+            <v-text-field
+              v-model="dayQuota"
+              label="Tagesbedarf"
+              required
+            ></v-text-field>
+            <v-btn
+              text
+              color="#348d9a"
+              class="mt-3"
+              @click="addNewNutriScoreItem"
+            >
+              Hinzufügen
+            </v-btn>
+          </div>
+          <div v-if="nutritionalValues.length !== 0">
+            {{ nutritionalValues }}
           </div>
         </v-col>
       </v-row>
@@ -56,19 +110,40 @@ export default {
       category: [],
     },
     valid: false,
-    firstname: "",
-    lastname: "",
-    nameRules: [
-      (v) => !!v || "Name is required",
-      (v) => v.length <= 10 || "Name must be less than 10 characters",
-    ],
-    email: "",
-    emailRules: [
-      (v) => !!v || "E-mail is required",
-      (v) => /.+@.+/.test(v) || "E-mail must be valid",
-    ],
+    link: "",
+    time: "",
+    nutritionalScore: "",
+    levelOfDifficulty: "",
+    ingredients: [],
+    ingredientName: "",
+    mass: "",
+    unity: "",
+    step: "",
+    steps: [],
+    value: "",
+    dayQuota: "",
+    nameNutriScore: "",
+    nutritionalValues: [],
   }),
-  methods: {},
+  methods: {
+    addNewIngredientItem() {
+      const ingName = this.ingredientName;
+      const mass = this.mass;
+      const unity = this.unity;
+      this.ingredients.push({ name: ingName, mass, unity });
+    },
+    addNewStep() {
+      const step = this.step;
+      this.steps.push(step);
+      this.step = "";
+    },
+    addNewNutriScoreItem() {
+      const dayQuota = this.dayQuota;
+      const nameNutriScore = this.nameNutriScore;
+      const value = this.value;
+      this.nutritionalValues.push({ name: nameNutriScore, value, dayQuota });
+    },
+  },
   beforeMount() {},
 };
 </script>

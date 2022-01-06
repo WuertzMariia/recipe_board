@@ -79,3 +79,7 @@
 .icon-color {
     background-color: #348d9a;
 }
+
+.flex-gap {
+    gap: 1rem;
+}
