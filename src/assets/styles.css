@@ -92,3 +92,10 @@
     color: white !important;
     font-size: 18px;
 }
+
+
+.alert-danger {
+    background-color: darkred !important;
+    color: white !important;
+    font-size: 18px;
+}
