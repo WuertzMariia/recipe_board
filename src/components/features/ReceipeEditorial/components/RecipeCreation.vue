@@ -10,8 +10,10 @@
             :counter="10"
             label="Link zum Bild"
           ></v-text-field>
-          <v-text-field v-model="time" label="Zeit"></v-text-field>
-          <div>Ordnen Sie das Rezept den folgenden Kategorien zu:</div>
+          <v-text-field v-model="time" type="time" label="Zeit"></v-text-field>
+          <h4 class="mt-3">
+            Ordnen Sie das Rezept den folgenden Kategorien zu:
+          </h4>
           <div class="d-flex flex-row flex-wrap justify-space-start">
             <div v-for="(category, index) in categories" :key="category">
               <v-checkbox
@@ -25,15 +27,17 @@
               />
             </div>
           </div>
-          <v-text-field
-            v-model="levelOfDifficulty"
-            label="Schwierigkeitsgrad"
-          ></v-text-field>
-          <v-text-field
-            v-model="nutritionalScore"
-            label="Nutri-Score"
-            required
-          ></v-text-field>
+          <h4 class="mt-5">Schwierigkeitsgrad</h4>
+          <v-radio-group v-model="levelOfDifficulty">
+            <v-radio
+              v-for="n in levels"
+              :key="n"
+              :label="`${n}`"
+              :value="n"
+            ></v-radio>
+          </v-radio-group>
+          <h4>Nutritional Score</h4>
+          <v-rating v-model="nutritionalScore" hover></v-rating>
           <h4 class="ml-3 mb-5 mt-5 d-flex justify-start">
             Zutaten hinzufügen
           </h4>
@@ -74,7 +78,7 @@
             v-bind:addedData="steps"
             v-bind:type="'steps'"
           ></added-data>
-          <h4 class="ml-3 mb-5 mt-5 d-flex justify-start">
+          <h4 class="ml-3 mb-5 mt-12 d-flex justify-start">
             Ernäherungswerte hinzufügen
           </h4>
           <div class="d-flex justify-space-between flex-gap">
@@ -127,6 +131,7 @@
 import { categories } from "@/store/data/categories";
 import AddedData from "@/components/features/ReceipeEditorial/components/AddedData";
 import AlertPopup from "@/shared/components/AlertPopup";
+import { levelOfDifficulty } from "@/store/data/levelOfDifficulty";
 
 export default {
   components: {
@@ -136,13 +141,14 @@ export default {
   data: () => ({
     showPopUp: false,
     categories,
+    levels: levelOfDifficulty,
+    nutritionalScore: 0,
     selectionCategory: {
       category: [],
     },
     name: "",
     imageLink: "",
     time: "",
-    nutritionalScore: "",
     levelOfDifficulty: "",
     ingredients: [],
     ingredientName: "",
@@ -156,6 +162,7 @@ export default {
     nutritionalValues: [],
   }),
   methods: {
+    // TODO validate form inputs
     addNewIngredientItem() {
       if (
         this.ingredientName.length !== 0 &&
@@ -163,7 +170,7 @@ export default {
         this.unity.length !== 0
       ) {
         const ingName = this.ingredientName;
-        const mass = this.mass;
+        const mass = this.mass.toString();
         const unity = this.unity;
         this.ingredients.push({
           name: ingName,
@@ -185,12 +192,12 @@ export default {
     addNewNutriScoreItem() {
       if (
         this.dayQuota.length !== 0 &&
-        this.nameNutriScore.length !== 0 &&
+        this.nameNutriScore !== 0 &&
         this.value.length !== 0
       ) {
         const dayQuota = this.dayQuota;
         const nameNutriScore = this.nameNutriScore;
-        const value = this.value;
+        const value = this.value.toString();
         this.nutritionalValues.push({ name: nameNutriScore, value, dayQuota });
         this.dayQuota = "";
         this.nameNutriScore = "";
@@ -201,19 +208,30 @@ export default {
       const newRecipe = {
         name: this.name,
         imageLink: this.imageLink,
-        time: this.time,
+        time: this.time.toString(),
         categories: this.selectionCategory.category,
         levelOfDifficulty: this.levelOfDifficulty,
-        nutritionalScore: this.nutritionalScore,
+        nutritionalScore: this.nutritionalScore.toString(),
         ingredients: this.ingredients,
         steps: this.steps,
         nutritionalValues: this.nutritionalValues,
       };
-      this.$store.commit("addNewRecipe", newRecipe);
-      this.showPopUp = true;
-      window.setTimeout(() => {
-        this.showPopUp = false;
-      }, 2000);
+      console.log("aaa", newRecipe);
+      const allowSaving = Object.values(newRecipe).every(
+        (item) => item.length !== 0
+      );
+      if (allowSaving) {
+        this.$store.commit("addNewRecipe", newRecipe);
+        this.showPopUp = true;
+        window.setTimeout(() => {
+          this.showPopUp = false;
+          this.$router.push({ path: "/" });
+        }, 2000);
+      } else {
+        alert(
+          "Sie haben nicht alle Felder ausgefüllt! Das Rezept kann nicht abgespeichert werden."
+        );
+      }
     },
   },
   beforeMount() {},
