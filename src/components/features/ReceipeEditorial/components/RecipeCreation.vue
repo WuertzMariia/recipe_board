@@ -6,7 +6,7 @@
         <v-col cols="12" md="8">
           <v-text-field v-model="name" :counter="3" label="Name"></v-text-field>
           <v-text-field
-            v-model="link"
+            v-model="imageLink"
             :counter="10"
             label="Link zum Bild"
           ></v-text-field>
@@ -103,6 +103,17 @@
             v-bind:addedData="nutritionalValues"
             v-bind:type="'nutritionalValues'"
           ></added-data>
+          <div class="d-flex justify-center align-content-center">
+            <v-btn
+              text
+              size="x-large"
+              color="#348d9a"
+              class="mt-3 mb-12"
+              @click="saveNewRecipe"
+            >
+              Rezept speichern
+            </v-btn>
+          </div>
         </v-col>
       </v-row>
     </v-container>
@@ -124,8 +135,8 @@ export default {
     selectionCategory: {
       category: [],
     },
-    valid: false,
-    link: "",
+    name: "",
+    imageLink: "",
     time: "",
     nutritionalScore: "",
     levelOfDifficulty: "",
@@ -139,7 +150,6 @@ export default {
     dayQuota: "",
     nameNutriScore: "",
     nutritionalValues: [],
-    test: [],
   }),
   methods: {
     addNewIngredientItem() {
@@ -182,6 +192,21 @@ export default {
         this.nameNutriScore = "";
         this.value = "";
       }
+    },
+    saveNewRecipe() {
+      const newRecipe = {
+        name: this.name,
+        imageLink: this.imageLink,
+        time: this.time,
+        categories: this.selectionCategory.category,
+        levelOfDifficulty: this.levelOfDifficulty,
+        nutritionalScore: this.nutritionalScore,
+        ingredients: this.ingredients,
+        steps: this.steps,
+        nutritionalValues: this.nutritionalValues,
+      };
+      console.log(newRecipe);
+      return this.$store.commit("addNewRecipe", newRecipe);
     },
   },
   beforeMount() {},
