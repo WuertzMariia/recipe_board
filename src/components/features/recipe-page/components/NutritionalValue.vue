@@ -1,7 +1,7 @@
 <template>
   <h3 class="ml-3">Nährwerte pro Portion</h3>
   <v-container>
-    <table class="styled-table">
+    <table class="styled-table styled-table-margin">
       <thead>
         <tr>
           <th>Nährstoff</th>

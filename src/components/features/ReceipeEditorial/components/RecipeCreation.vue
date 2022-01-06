@@ -143,24 +143,45 @@ export default {
   }),
   methods: {
     addNewIngredientItem() {
-      const ingName = this.ingredientName;
-      const mass = this.mass;
-      const unity = this.unity;
-      this.ingredients.push({
-        name: ingName,
-        mass,
-        unity,
-      });
+      if (
+        this.ingredientName.length !== 0 &&
+        this.mass.length !== 0 &&
+        this.unity.length !== 0
+      ) {
+        const ingName = this.ingredientName;
+        const mass = this.mass;
+        const unity = this.unity;
+        this.ingredients.push({
+          name: ingName,
+          mass,
+          unity,
+        });
+        this.ingredientName = "";
+        this.mass = "";
+        this.unity = "";
+      }
     },
     addNewStep() {
-      const step = this.step;
-      this.steps.push(step);
+      if (this.step.length !== 0) {
+        const step = this.step;
+        this.steps.push(step);
+        this.step = "";
+      }
     },
     addNewNutriScoreItem() {
-      const dayQuota = this.dayQuota;
-      const nameNutriScore = this.nameNutriScore;
-      const value = this.value;
-      this.nutritionalValues.push({ name: nameNutriScore, value, dayQuota });
+      if (
+        this.dayQuota.length !== 0 &&
+        this.nameNutriScore.length !== 0 &&
+        this.value.length !== 0
+      ) {
+        const dayQuota = this.dayQuota;
+        const nameNutriScore = this.nameNutriScore;
+        const value = this.value;
+        this.nutritionalValues.push({ name: nameNutriScore, value, dayQuota });
+        this.dayQuota = "";
+        this.nameNutriScore = "";
+        this.value = "";
+      }
     },
   },
   beforeMount() {},
